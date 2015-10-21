@@ -88,7 +88,7 @@
 
             case '3d' :
               vm.elem.css({
-              'transform': 'rotateX(' + -vm.rotateX + 'deg) rotateY('+ vm.rotateY + 'deg)'
+              'transform': 'rotateX(' + vm.rotateX + 'deg) rotateY('+ -vm.rotateY + 'deg)'
               });
 
               vm.elem.find('.shadow').css({
@@ -140,13 +140,13 @@
             default :
               layer.css({
                  'z-index': depth,
-                'transform': 'translate3d('+ (vm.rotateY * depth)  +'px,'+ (vm.rotateX * depth) +'px,'+ translateZ +'px)'
+                'transform': 'translate3d('+ (-vm.rotateY * depth)  +'px,'+ (-vm.rotateX * depth) +'px,'+ translateZ +'px)'
               });
 
               if (!settings.scaleDepths) {
                 layer.css({
                   'z-index': depth,
-                  'transform': 'translate3d('+ (vm.rotateY * depth)  +'px,'+ (vm.rotateX * depth) +'px, 0px)'
+                  'transform': 'translate3d('+ (-vm.rotateY * depth)  +'px,'+ (-vm.rotateX * depth) +'px, 0px)'
                 });
               }
 

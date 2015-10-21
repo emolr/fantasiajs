@@ -9,9 +9,9 @@ html, body {
 }
 
 .example-scene {
+  position: relative;
   width: 600px;
   height: 400px;
-  position: relative;
   overflow: visible;
   margin: 50px auto 200px auto;
 }
@@ -82,4 +82,139 @@ ul li {
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.4);
   display: none;
+}
+
+
+
+
+
+/* Oceon scene */
+.ocean {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  // background-color: rgba(0,0,0,0.03);
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+
+.oceon-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: none;
+}
+
+.oceon__wave {
+  position: absolute;
+  bottom: -100px;
+  left: -100%;
+  width: 300%;
+  height: 200px;
+  background-image: url(../images/wave.png);
+
+}
+
+.oceon__wave:after {
+  content:"";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background-color: #FFF;
+}
+
+.oceon__wave.depth-5 {
+  animation: wave 4s 0.1s infinite linear;
+  bottom: -40px;
+  background-position-x: 0;
+}
+.oceon__wave.depth-4 {
+  animation: wave 5s 0.1s infinite linear;
+  bottom: -100px;
+  background-position-x: -170px;
+  background-size: 500px 273px;
+  height: 273px;
+}
+.oceon__wave.depth-3 {
+  animation: wave 6s 0.1s infinite linear;
+  bottom: -40px;
+  background-position-x: -10px;
+  background-size: 460px 214px;
+  height: 214px;
+}
+.oceon__wave.depth-2 {
+  animation: wave 7s 0.1s infinite linear;
+  bottom: 10px;
+  background-position-x: 10px;
+  background-size: 380px 176px;
+  height: 176px;
+}
+.oceon__wave.depth-1 {
+  animation: wave 8s 0.1s infinite linear;
+  bottom: 40px;
+  background-position-x: -10px;
+  background-size: 300px 139px;
+  height: 139px;
+}
+
+.oceon__bg {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 380px;
+  // background-image: url(http://matthew.wagerfield.com/parallax/assets/images/background.jpg);
+  background-color: rgba(0,0,0,0.06);
+  background-size: cover;
+}
+
+@keyframes wave {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+    -moz-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+    -moz-transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+    transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+  }
+}
+
+
+.oceon-horizon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
+  background-color: rgba(0,0,0,0.07);
+  transform-style: preserve-3d;
+  z-index: 9;
+}
+
+.oceon-horizon__sun {
+  width: 30px;
+  height: 30px;
+  background-color: #FDFF7B;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 120px;
+  right: 80px;
+  box-shadow: 0px 0px 200px 110px #FDFF7B;
 }
