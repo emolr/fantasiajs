@@ -1,0 +1,108 @@
+<!doctype html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>fantasia Test Suite</title>
+    <!-- Load local jQuery. -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- Load local QUnit. -->
+    <link rel="stylesheet" href="src/fantasia.css" media="screen">
+    <!-- Load local lib and tests. -->
+    <script src="src/fantasiajs.js"></script>
+
+  </head>
+  <body>
+    <section class="section">
+      <div id="scene3d" class="example-scene">
+        <div id="box3d1" class="box">
+            <div class="layer" data-depth="-5">
+              <div class="shadow"></div>
+            </div>
+            <div class="layer" data-depth="1">
+              <div class="shadow"></div>
+            </div>
+            <div class="layer" data-depth="4">
+              <div class="shadow"></div>
+            </div>
+            <div class="layer" data-depth="2">
+              <div class="shadow"></div>
+            </div>
+          </div>
+      </div>
+
+      <div id="scene3dNoScale" class="example-scene">
+        <div id="box3d2" class="box">
+            <div class="layer" data-depth="-5">
+              <div class="shadow"></div>
+            </div>
+            <div class="layer" data-depth="1">
+              <div class="shadow"></div>
+            </div>
+            <div class="layer" data-depth="4">
+              <div class="shadow"></div>
+            </div>
+            <div class="layer" data-depth="2">
+              <div class="shadow"></div>
+            </div>
+          </div>
+      </div>
+
+      <div id="sceneParallax" class="example-scene">
+        <div id="boxP1" class="box">
+            <div class="layer" data-depth="-5" data-scale="false">
+            </div>
+            <div class="layer" data-depth="1">
+            </div>
+            <div class="layer" data-depth="4">
+            </div>
+            <div class="layer" data-depth="2">
+            </div>
+          </div>
+      </div>
+
+      <div id="sceneParallaxNoScale" class="example-scene">
+        <div id="boxP2" class="box">
+            <div class="layer" data-depth="-5">
+            </div>
+            <div class="layer" data-depth="1">
+            </div>
+            <div class="layer" data-depth="4">
+            </div>
+            <div class="layer" data-depth="2">
+            </div>
+          </div>
+      </div>
+    </section>
+    <script>
+      $(document).ready(function() {
+        $('#box3d1').fantasia({
+          trackFrom: '#scene3d',
+          type: '3d',
+          perspective: '600px',
+        });
+
+        $('#box3d2').fantasia({
+          trackFrom: '#scene3dNoScale',
+          type: '3d',
+          perspective: '600px',
+          scaleDepths: false
+        });
+
+        $('#boxP1').fantasia({
+          trackFrom: '#sceneParallax',
+          type: 'parallax',
+          perspective: '600px',
+          rotationLimit: 10
+        });
+
+        $('#boxP2').fantasia({
+          trackFrom: '#sceneParallaxNoScale',
+          type: 'parallax',
+          perspective: '600px',
+          rotationLimit: 10,
+          scaleDepths: false
+        });
+      });
+    </script>
+  </body>
+</html>
