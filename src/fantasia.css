@@ -5,7 +5,14 @@ html, body {
 }
 
 .section {
-  padding: 100px 0 100px;
+  padding: 100px 0 0;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
 }
 
 .example-scene {
@@ -89,6 +96,10 @@ ul li {
 
 
 /* Oceon scene */
+
+#oceanScene {
+  width: 100%;
+}
 .ocean {
   position: absolute;
   width: 100%;
@@ -97,7 +108,7 @@ ul li {
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: hidden;
+  overflow: visible;
   // background-color: rgba(0,0,0,0.03);
   transform-style: preserve-3d;
   z-index: 10;
@@ -174,7 +185,7 @@ ul li {
   width: 120%;
   height: 380px;
   // background-image: url(http://matthew.wagerfield.com/parallax/assets/images/background.jpg);
-  background-color: rgba(0,0,0,0.06);
+  // background-color: rgba(0,0,0,0.06);
   background-size: cover;
 }
 

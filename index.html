@@ -60,7 +60,7 @@
           </div>
       </div>
 
-      <div id="sceneParallaxNoScale" class="example-scene">
+      <div id="sceneParallaxNoScale" class="example-scene" style="margin-bottom: 0;">
         <div id="boxP2" class="box">
             <div class="layer" data-depth="-5">
             </div>
@@ -73,38 +73,32 @@
           </div>
       </div>
 
-      <div id="oceanScene" class="example-scene">
-        <div id="oceanSceneMain" class="ocean">
-          <div class="oceon-layer" data-depth="-0.8" >
-            <div class="oceon__bg"></div>
-          </div>
-          <div class="oceon-layer" data-depth="0" >
-            <div class="oceon__wave depth-1"></div>
-          </div>
-          <div class="oceon-layer" data-depth="1" >
-            <div class="oceon__wave depth-2"></div>
-          </div>
-          <div class="oceon-layer" data-depth="2" >
-            <div class="oceon__wave depth-3"></div>
-          </div>
-          <div class="oceon-layer" data-depth="3">
-            <div class="oceon__wave depth-4"></div>
-          </div>
-          <div class="oceon-layer" data-depth="4">
-            <div class="oceon__wave depth-5"></div>
-          </div>
-        </div>
-
-        <!-- <div id="oceanSceneHorizon" class="oceon-horizon">
-          <div class="oceon-layer" data-depth="-1">
-            <div class="oceon-horizon__sun"></div>
-          </div>
-        </div> -->
-      </div>
-
     </section>
 
-
+<section class="footer">
+  <div id="oceanScene" class="example-scene">
+    <div id="oceanSceneMain" class="ocean">
+      <div class="oceon-layer" data-depth="-0.8" >
+        <div class="oceon__bg"></div>
+      </div>
+      <div class="oceon-layer" data-depth="0" >
+        <div class="oceon__wave depth-1"></div>
+      </div>
+      <div class="oceon-layer" data-depth="1" >
+        <div class="oceon__wave depth-2"></div>
+      </div>
+      <div class="oceon-layer" data-depth="2" >
+        <div class="oceon__wave depth-3"></div>
+      </div>
+      <div class="oceon-layer" data-depth="3">
+        <div class="oceon__wave depth-4"></div>
+      </div>
+      <div class="oceon-layer" data-depth="4">
+        <div class="oceon__wave depth-5"></div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- Notes -->
 
 <!--
@@ -142,26 +136,15 @@
           scaleDepths: false
         });
 
-
-        // Ocean scene
         $('#oceanSceneMain').fantasia({
-          trackFrom: '#oceanSceneMain',
+          trackFrom: '#oceanScene',
+          perspectiveParent: '#oceanScene',
           type: 'parallax',
-          perspective: '200px',
-          rotationLimit: 16,
-          scaleDepths: false,
-          magicNumber: 20
+          perspective: '600px',
+          rotationLimit: 20,
+          scaleDepths: true,
+          magicNumber: 30
         });
-
-        // Ocean scene
-        // $('#oceanSceneHorizon').fantasia({
-        //   trackFrom: '#oceanSceneMain',
-        //   type: 'parallax',
-        //   perspective: '200px',
-        //   rotationLimit: 10,
-        //   scaleDepths: false,
-        //   magicNumber: 20
-        // });
       });
     </script>
   </body>

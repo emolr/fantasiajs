@@ -13,6 +13,7 @@
 
        var settings = $.extend({
            trackFrom : 'body',
+           perspectiveParent : null,
            perspective : '600px',
            rotationLimit : '20',
            type : '3d',
@@ -23,9 +24,16 @@
 
 
        vm.elem = $(this);
+       vm.perspectiveContainer = $(settings.perspectiveParent);
        vm.trackingSelector = $(settings.trackFrom);
        vm.boxWidth = vm.trackingSelector.width();
        vm.boxHeight = vm.trackingSelector.height();
+
+       if (settings.perspectiveParent === null) {
+          vm.perspectiveContainer = $(settings.trackFrom);
+       } else {
+          vm.perspectiveContainer = $(settings.perspectiveParent);
+       }
 
        switch (settings.trackFrom) {
         case window :
@@ -69,7 +77,7 @@
 
 
        // Kick off perspective
-       vm.trackingSelector.css('perspective', settings.perspective);
+       vm.perspectiveContainer.css('perspective', settings.perspective);
 
 
        vm.trackingSelector.on('mousemove', function(e) {
