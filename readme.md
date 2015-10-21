@@ -2,7 +2,7 @@
 
 > a parralax, 3d, depthcontrol plugin to create beautiful imagery
 
-> NB! No production version available, still under development, and no tests done yet
+> NB! This whole thing is still under creative development, and no test are written yet.
 
 ## Getting Started
 
