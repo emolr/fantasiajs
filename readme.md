@@ -8,8 +8,8 @@
 
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.githubusercontent.com/emolr/jquery-fantasiajs/master/dist/jquery.fantasiajs.min.js
-[max]: https://raw.githubusercontent.com/emolr/jquery-fantasiajs/master/dist/jquery.fantasiajs.js
+[min]: https://raw.githubusercontent.com/emolr/fantasia/master/dist/jquery.fantasiajs.min.js
+[max]: https://raw.githubusercontent.com/emolr/fantasia/master/dist/jquery.fantasiajs.js
 
 In your web page:
 
