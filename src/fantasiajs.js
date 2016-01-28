@@ -37,7 +37,7 @@
 
        switch (settings.trackFrom) {
         case window :
-          vm.boxTop = 0;
+          vm.boxTop = $(window).scrollTop();
           vm.boxLeft = 0;
           break;
         default :
@@ -84,6 +84,12 @@
          vm.mouseX = e.pageX;
          vm.mouseY = e.pageY;
        });
+
+       if (settings.trackFrom === window) {
+          $(document).on('scroll', function() {
+            vm.boxTop = $(window).scrollTop();
+          });
+       }
 
 
        function rotate() {
