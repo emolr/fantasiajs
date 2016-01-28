@@ -1,5 +1,5 @@
-/*! fantasiajs - v0.0.1 - 2015-10-21
-* Copyright (c) 2015 Emil Rune Møller; Licensed MIT */
+/*! fantasiajs - v0.0.1 - 2016-01-28
+* Copyright (c) 2016 Emil Rune Møller; Licensed MIT */
 (function ( $ ) {
 
    $.fn.fantasia = function( options ) {
@@ -8,6 +8,7 @@
 
        var settings = $.extend({
            trackFrom : 'body',
+           perspectiveParent : null,
            perspective : '600px',
            rotationLimit : '20',
            type : '3d',
@@ -18,13 +19,20 @@
 
 
        vm.elem = $(this);
+       vm.perspectiveContainer = $(settings.perspectiveParent);
        vm.trackingSelector = $(settings.trackFrom);
        vm.boxWidth = vm.trackingSelector.width();
        vm.boxHeight = vm.trackingSelector.height();
 
+       if (settings.perspectiveParent === null) {
+          vm.perspectiveContainer = $(settings.trackFrom);
+       } else {
+          vm.perspectiveContainer = $(settings.perspectiveParent);
+       }
+
        switch (settings.trackFrom) {
         case window :
-          vm.boxTop = 0;
+          vm.boxTop = $(window).scrollTop();
           vm.boxLeft = 0;
           break;
         default :
@@ -64,13 +72,19 @@
 
 
        // Kick off perspective
-       vm.trackingSelector.css('perspective', settings.perspective);
+       vm.perspectiveContainer.css('perspective', settings.perspective);
 
 
        vm.trackingSelector.on('mousemove', function(e) {
          vm.mouseX = e.pageX;
          vm.mouseY = e.pageY;
        });
+
+       if (settings.trackFrom === window) {
+          $(document).on('scroll', function() {
+            vm.boxTop = $(window).scrollTop();
+          });
+       }
 
 
        function rotate() {
