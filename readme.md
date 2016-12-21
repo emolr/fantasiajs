@@ -18,7 +18,11 @@ In your web page:
 <script src="dist/fantasiajs.min.js"></script>
 <script>
   jQuery(function ($) {
-    $.fantasia({...})
+    $('#box3d1').fantasia({ // Div to rotate
+      trackFrom: '#scene3d', // calculate rotation from
+      type: '3d',
+      perspective: '600px',
+    });
   });
 </script>
 ```
