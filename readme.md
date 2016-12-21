@@ -18,7 +18,7 @@ In your web page:
 <script src="dist/fantasiajs.min.js"></script>
 <script>
   jQuery(function ($) {
-    $.awesome(); // "awesome"
+    $.fantasia({...})
   });
 </script>
 ```
