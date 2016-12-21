@@ -1,8 +1,6 @@
-# fantasia
+# fantasiajs
 
-> a parralax, 3d, depthcontrol plugin to create beautiful imagery
-
-> NB! This whole thing is still under creative development, and no test are written yet.
+> a parralax, 3d, depthcontrol plugin to create beautiful imagery and effects
 
 ## Getting Started
 
